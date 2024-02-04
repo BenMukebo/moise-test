@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Button } from '@nextui-org/button';
-import { CustomButton } from '@/components/shared/custom-button/CustomButton';
 import { CurrentRound, Chat, Login, Ranking, RoundController } from "@/components";
 import { useUserInfoContext } from '@/contexts/userContext';
 
@@ -68,7 +66,7 @@ export default function Home() {
 
         <div className="flex flex-col w-full grow w-8/12">
           <ul className="h-[48px] w-full flex items-center gap-16 mb-16">
-            <li className="h-full flex flex-1 items-center gap-8 rounded-8 bg-dark-blue bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <li className="h-full flex flex-1 items-center gap-8 rounded-8 bg-gradient-to-r from-[#181b24] to-dark-blue">
               <Image
                 src="/images/medal.webp"
                 alt="Logo"
@@ -77,7 +75,7 @@ export default function Home() {
               />
               <p className="text-white text-md">Home</p>
             </li>
-            <li className="h-full flex flex-1 items-center gap-8 rounded-8 bg-dark-blue">
+            <li className="h-full flex flex-1 items-center gap-8 rounded-8  bg-gradient-to-r from-[#181b24] bg-dark-blue">
               <Image
                 src="/images/user-profile.png"
                 alt="Logo"
@@ -86,7 +84,7 @@ export default function Home() {
               />
               <p className="text-white text-sm">Home</p>
             </li>
-            <li className="h-full flex flex-1 items-center gap-8 rounded-8 bg-dark-blue bg-gradient-to-r from-indigo-500">
+            <li className="h-full flex flex-1 items-center gap-8 rounded-8  bg-gradient-to-r from-[#181b24] bg-dark-blue ">
               <Image
                 src="/images/clock.webp"
                 alt="Logo"

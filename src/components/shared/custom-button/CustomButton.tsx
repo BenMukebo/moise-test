@@ -1,8 +1,6 @@
 'use client';
 import { Button } from '@nextui-org/react';
 import Link from 'next/link';
-import { MouseEventHandler } from 'react';
-
 
 type ButtonTYpe = 'button' | 'submit' | 'reset';
 
@@ -20,11 +18,8 @@ interface CustomButtonProps {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   fullWidth?: boolean;
-  // handleClick?: MouseEventHandler<HTMLButtonElement>;
   handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
-
 }
-
 
 export const CustomButton: React.FC<CustomButtonProps> = (props) => {
   const {
