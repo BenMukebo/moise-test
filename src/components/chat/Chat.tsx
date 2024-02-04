@@ -30,7 +30,7 @@ export const Chat: React.FC = () => {
   ];
 
   return (
-    <article className="w-6/12 flex flex-col">
+    <article className="w-5/12 min-w-[375px] grow flex flex-col">
       <div className="flex items-center gap-4 mb-20">
         <Image
           src="/images/chat.png"

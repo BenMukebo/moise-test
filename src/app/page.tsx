@@ -35,7 +35,7 @@ export default function Home() {
     },
     {
       icon: "/images/user-profile.png",
-      text: userInfo.name,
+      text: userInfo.name || "Guest",
       size: "sm",
     },
     {
@@ -47,8 +47,8 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center py-32 px-24 bg-black">
-      <div className="w-full max-w-7xl min-h-[480px] flex gap-16">
-        <div className="w-2/5 max-w-[440px]">
+      <div className="w-full max-w-7xl min-h-[480px] flex justify-center flex-wrap gap-16 lg:flex-nowrap">
+        <div className="grow w-2/5 max-w-[480px]">
 
           {userInfo.isLogin ? (
             <>
@@ -81,7 +81,7 @@ export default function Home() {
           )}
         </div>
 
-        <div className="flex flex-col grow w-8/12">
+        <div className="grow w-7/12 flex flex-col">
           <ul className="h-[48px] w-full flex items-center gap-16 mb-16">
             {headerItems.map((item, index: number) => (
               <li
@@ -99,7 +99,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full max-w-7xl flex gap-16 mt-24">
+      <div className="w-full max-w-7xl flex gap-16 flex-wrap mt-24">
         <Ranking />
         <Chat />
       </div>

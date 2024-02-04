@@ -31,7 +31,7 @@ export const Ranking: React.FC = () => {
   ];
 
   return (
-    <article className="w-6/12">
+    <article className="w-6/12 min-w-[480px] grow">
       <div className="flex items-center gap-4 mb-20">
         <Image
           src="/images/ranking.png"
