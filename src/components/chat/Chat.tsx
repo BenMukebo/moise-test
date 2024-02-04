@@ -4,7 +4,14 @@ import Image from "next/image";
 import { CustomButton } from "..";
 
 export const Chat: React.FC = () => {
-  const chatData = [
+
+  interface ChatData {
+    id: string;
+    name: string;
+    message: string;
+  }
+
+  const chatData: ChatData[] = [
     {
       id: "1",
       name: "CPU 1",
@@ -36,7 +43,7 @@ export const Chat: React.FC = () => {
 
       <div className="flex flex-col justify-end bg-dark-blue pt-24 rounded-6 grow">
         <ul className="px-16">
-          {chatData.map((chat) => (
+          {chatData.map((chat: ChatData) => (
             <li key={chat.id} className="w-full flex items-center gap-12 my-8">
               <p className="text-12 text-center bg-clip-text text-transparent bg-gradient-to-r from-[#ff4326] to-[#6809dccb]">
                 {chat.name}
