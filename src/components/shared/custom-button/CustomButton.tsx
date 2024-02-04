@@ -20,8 +20,9 @@ interface CustomButtonProps {
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   fullWidth?: boolean;
-  handleClick?: MouseEventHandler<HTMLButtonElement>;
-  // handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  // handleClick?: MouseEventHandler<HTMLButtonElement>;
+  handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+
 }
 
 

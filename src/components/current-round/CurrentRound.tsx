@@ -55,7 +55,6 @@ export const CurrentRound = () => {
 
   return (
     <div className="flex flex-col w-full h-full rounded-small py-48 px-20">
-
       <CustomButton
         color="secondary"
         radius="sm"

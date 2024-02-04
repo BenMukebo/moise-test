@@ -38,8 +38,26 @@ export default function Home() {
           {userInfo.isLogin ? (
             <>
               <div className="flex items-center justify-around">
-                <RoundController label="Points" value={points} />
-                <RoundController label="Multipilier" value={multipler} />
+                <RoundController
+                  label="Points"
+                  value={points}
+                  onEncrease={() => {
+                    setPoints((previous) => previous + 1);
+                  }}
+                  onDecrease={() => {
+                    setPoints((previous) => previous - 1);
+                  }}
+                />
+                <RoundController
+                  label="Multipilier"
+                  value={multipler}
+                  onEncrease={() => {
+                    setMultipler((previous) => previous + 1);
+                  }}
+                  onDecrease={() => {
+                    setMultipler((previous) => previous - 1);
+                  }}
+                />
               </div>
               <CurrentRound />
             </>
