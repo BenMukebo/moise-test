@@ -16,7 +16,7 @@ interface userContextProps {
 
 const defaultUserData: userContextProps = {
   userInfo: {
-    name: 'm',
+    name: '',
     email: '',
     isLogin: false,
   },

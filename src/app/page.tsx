@@ -29,7 +29,6 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col items-center py-32 px-24 bg-black">
-
       <div className="w-full max-w-7xl min-h-[480px] flex gap-16">
         <div className="w-2/5 max-w-[440px]">
 
@@ -82,7 +81,7 @@ export default function Home() {
                 width={40}
                 height={40}
               />
-              <p className="text-white text-sm">Home</p>
+              <p className="text-white text-sm">{userInfo.name}</p>
             </li>
             <li className="h-full flex flex-1 items-center gap-8 rounded-8  bg-gradient-to-r from-[#181b24] bg-dark-blue ">
               <Image
@@ -91,7 +90,9 @@ export default function Home() {
                 width={40}
                 height={40}
               />
-              <p className="text-white text-sm">Home</p>
+              <p className="text-white text-sm">{
+                new Date().toLocaleTimeString()
+              }</p>
             </li>
           </ul>
 
