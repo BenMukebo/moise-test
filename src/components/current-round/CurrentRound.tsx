@@ -1,10 +1,12 @@
 import React from 'react';
-import { Slider } from "@nextui-org/react";
+import Slider from '@mui/material/Slider';
+import { useUserInfoContext } from '@/contexts/userContext';
 
 import { CustomButton } from '..'
 import Image from 'next/image';
 
 export const CurrentRound = () => {
+  const { userInfo, setUserInfo } = useUserInfoContext();
 
   interface CurrentRoundData {
     name: string;
@@ -76,6 +78,7 @@ export const CurrentRound = () => {
           width={25}
           height={25}
         />
+        {/* 🏆 */}
         <h3 className="text-white text-18">Current Round</h3>
       </div>
 
@@ -109,32 +112,45 @@ export const CurrentRound = () => {
         <h3 className="text-white text-18">Speed</h3>
       </div>
 
-      <div className='w-full h-[58px] flex items-center px-8 py-8 bg-dark-blue border border-[#5a6374] rounded-small'>
-        <Slider
-          // label="Select a value"
-          color="danger"
-          size="md"
-          step={10}
-          marks={[...speedMarks
-          ]}
-          defaultValue={25}
-          className="w-full max-w-md text-white h-[10px] bg-dark-blue"
-          classNames={{
-            // base: "max-w-md",
-            // filler: "bg-gradient-to-r from-primary-500 to-secondary-400",
-            // labelWrapper: "mb-2",
-            // label: "font-medium text-default-700 text-medium",
-            // value: "font-medium text-default-500 text-small",
-            thumb: [
-              "transition-size",
-              "w-6 h-6 rounded-2",
-              "bg-gradient-to-r from-[#e53d79] to-[#f75753]",
-              "data-[dragging=true]:shadow-lg data-[dragging=true]:shadow-black/20",
-              "data-[dragging=true]:w-7 data-[dragging=true]:h-7 data-[dragging=true]:after:h-6 data-[dragging=true]:after:w-6"
-            ],
-            // step: "data-[in-range=true]:bg-black/30 dark:data-[in-range=true]:bg-white/50"
-          }}
-        />
+      <div className='w-full flex items-center py-24 bg-dark-blue border border-[#5a6374] rounded-small'>
+        <div className='w-full h-[48px] flex items-center px-24'>
+          <Slider
+            aria-label="Temperature"
+            defaultValue={0}
+            value={userInfo.speed}
+            onChange={(e, value) => {
+              setUserInfo({ ...userInfo, speed: value as number });
+            }}
+            // getAriaValueText={valuetext}
+            valueLabelDisplay="off"
+            step={25}
+            marks={speedMarks}
+            // min={10}
+            // max={110}
+            classes={{
+              root: 'w-full ',
+              thumb: 'w-[25px] h-[25px] bg-[#e53d79] bg-gradient-to-r from-[#e53d79] to-[#f75753] border-2 border-white rounded-small',
+              track: 'h-[4px] bg-[#e53d79]',
+            }}
+            sx={{
+              color: '#afb7ca',
+              background: '',
+              'MuiSlider-valueLabel': {
+                color: 'white',
+              },
+              'MuiSlider-valueLabelLabel': {
+                color: 'white !important',
+              },
+              // Style the marks label with different colors
+              '& .MuiSlider-markLabel': {
+                color: 'white',
+              },
+              '& .MuiSlider-markLabelActive': {
+                background: 'bg-gradient-to-r from-[#ff4326] to-[#6809dccb]'
+              },
+            }}
+          />
+        </div>
       </div>
     </div>
   )

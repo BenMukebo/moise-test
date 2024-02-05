@@ -6,7 +6,6 @@ import { useUserInfoContext } from '@/contexts/userContext';
 
 export const Login: React.FC = () => {
   const { userInfo, setUserInfo } = useUserInfoContext();
-  console.log('userInfo', userInfo);
   let isDesabled = ((userInfo?.name?.length) || 0) <= 3;
 
   return (

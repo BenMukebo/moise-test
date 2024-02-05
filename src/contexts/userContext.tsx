@@ -2,11 +2,11 @@
 import React, { createContext, useState, ReactNode } from 'react';
 import { NextPage } from 'next';
 
-
 type userDataT = {
   name: string;
   email?: string;
   isLogin: boolean;
+  speed?: number;
 }
 
 interface userContextProps {
@@ -19,6 +19,7 @@ const defaultUserData: userContextProps = {
     name: '',
     email: '',
     isLogin: false,
+    speed: 0,
   },
   setUserInfo: () => { },
 };
@@ -40,7 +41,7 @@ const { Provider } = UserContext;
 const UserProvider: NextPage<{ children: ReactNode }> = ({ children }) => {
   const [userinfo, setUserInfo] = useState<userDataT>(defaultUserData.userInfo);
 
-
+  // console.log('userinfo', userinfo);
   const providerValues: userContextProps = {
     userInfo: userinfo,
     setUserInfo,

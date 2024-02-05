@@ -17,7 +17,6 @@ export const RoundController: React.FC<Props> = ({
   onDecrease
 }) => {
 
-  console.log('value', value);
   return (
     <div className="text-center px-8 py-4 border border-[#1a1d26] rounded-8">
       <p className="text-8 text-[#8c94a8] mb-2">
